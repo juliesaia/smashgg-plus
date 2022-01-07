@@ -1,0 +1,39 @@
+{
+    "name": "Smash.gg Plus",
+    "description": "Improvements to smash.gg!",
+    "version": "1.1",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": ["webRequest", "storage", "scripting", "activeTab"],
+    "host_permissions": ["https://smash.gg/*"],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "/images/logo16.png",
+            "32": "/images/logo32.png",
+            "48": "/images/logo48.png",
+            "128": "/images/logo128.png"
+          }
+    },
+    "icons": {
+      "16": "/images/logo16.png",
+      "32": "/images/logo32.png",
+      "48": "/images/logo48.png",
+      "128": "/images/logo128.png"
+    },
+    "content_scripts": [
+        {
+          "matches": ["https://smash.gg/*"],
+          "js": ["content-script.js"],
+          "run_at": "document_start"
+        }
+      ],
+    "web_accessible_resources": [
+      {
+        "resources": ["style.css"],
+        "matches": ["https://smash.gg/*"]
+      }
+    ]
+}
