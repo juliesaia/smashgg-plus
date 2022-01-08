@@ -1,6 +1,6 @@
 
 console.log("Smash.gg Plus Active!");
-console.log = function() {}
+// console.log = function() {}
 
 let sleep = ms => new Promise(r => setTimeout(r, ms));
 let waitFor = async function waitFor(f){
@@ -17,12 +17,14 @@ let waitFor = async function waitFor(f){
 // insert css as link tag at the bottom of html doc
 function insertCSS(file) {
     // removeCSS(file)
-    const style = document.createElement('link')
-    style.rel = 'stylesheet'
-    style.type = 'text/css'
-    style.href = chrome.runtime.getURL('style.css')
-    style.id = file
-    document.getElementsByTagName('html')[0].appendChild(style)
+    if(document.querySelectorAll("#dark-mode").length == 0){
+        const style = document.createElement('link')
+        style.rel = 'stylesheet'
+        style.type = 'text/css'
+        style.href = chrome.runtime.getURL('style.css')
+        style.id = file
+        document.getElementsByTagName('html')[0].appendChild(style)
+    }
 }
 
 // keep removing inserted css link elements until none are left
@@ -44,6 +46,7 @@ function makeDarkModeButton(result) {
         if (result.darkMode) {
             insertCSS("dark-mode")
         }
+
         var container_el = document.querySelectorAll(".sgg118ne.sgg1CIc0.sgg1f4az")[3]
         var button_el = document.querySelectorAll(".sgg118ne.sgg1CIc0.sgg1f4az")[3].children[1]
         var button_clone = button_el.cloneNode(true)
@@ -329,7 +332,7 @@ async function getSeeds(slug) {
 
 // keep checking if button got deleted
 function check_buttons() {
-    if (document.querySelector("#dark-mode-button") == null) {
+    if (document.querySelector("#dark-mode-button") == null && !location.pathname.endsWith("/register")){
         makeDarkModeButton();
     }
     setTimeout(() => {
@@ -338,12 +341,14 @@ function check_buttons() {
 }
 
 
+// IMPORTANT check_slug needs to be first otherwise overviewfunc happens before entrant_id is reset
+check_slug(50)
 
 // keep checking url until overview is visited
 check_url(50, overviewFunc, "/overview")
 // check_url(50, overviewFunc, "/matches")
 // todo?
-check_slug(50)
+
 check_url(50, standingsFunc, "/standings")
 check_url(50, setFunc, "set", true)
 
@@ -422,7 +427,7 @@ async function overviewFunc() {
     response = await fetch(url)
     data = await response.json()
     console.log("set query response!");
-    // console.log(data);
+    console.log(data);
     response_global = data.data
     set_valid = true
     

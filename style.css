@@ -39,7 +39,8 @@
   [class*="regionWrapper-USER_PAGE-FeatureCanvas-label-makeStyles-jss"], [class*="regionWrapper-USER_PAGE-FeatureCanvas-label-makeStyles-jss"] *,
   /* blue dates on results page... */
   .regionWrapper-USER_PAGE-GlobalNav-MuiTypography-root[class*="regionWrapper-USER_PAGE-FeatureCanvas-root-makeStyles-jss"][class*="regionWrapper-USER_PAGE-FeatureCanvas-root-makeStyles-jss"][class*="regionWrapper-USER_PAGE-FeatureCanvas-root-makeStyles-jss"][class*="regionWrapper-USER_PAGE-FeatureCanvas-root-makeStyles-jss"][class*="regionWrapper-USER_PAGE-FeatureHeading-label12-makeStyles-jss"].regionWrapper-USER_PAGE-GlobalNav-MuiTypography-body1, .regionWrapper-USER_PAGE-GlobalNav-MuiTypography-root[class*="regionWrapper-USER_PAGE-FeatureCanvas-root-makeStyles-jss"][class*="regionWrapper-USER_PAGE-FeatureCanvas-root-makeStyles-jss"][class*="regionWrapper-USER_PAGE-FeatureCanvas-root-makeStyles-jss"][class*="regionWrapper-USER_PAGE-FeatureCanvas-root-makeStyles-jss"][class*="regionWrapper-USER_PAGE-FeatureHeading-label12-makeStyles-jss"].regionWrapper-USER_PAGE-GlobalNav-MuiTypography-body1 *,
-  .gg-color-slate
+  .gg-color-slate,
+  .sgg1Ff3D
 ),
 /* tournament schedule tourney titles?? i have no idea why it got caught in the not above i hate smashgg */
 .appEntry-MuiTypography-root[class*="regionWrapper-APP_SETTINGS_OVERLAY_PAGE-FeatureCanvas-title-makeStyles-jss"][class*="regionWrapper-APP_SETTINGS_OVERLAY_PAGE-FeatureCanvas-title-makeStyles-jss"][class*="appEntry-body16-makeStyles-jss"].appEntry-MuiTypography-body1.appEntry-MuiTypography-noWrap,
@@ -67,7 +68,8 @@ h5,
 [class*="regionWrapper-APP_TOURNAMENT_PAGE-FeatureCanvas-nameSection-makeStyles-jss"],
 [class*="regionWrapper-APP_TOURNAMENT_PAGE-GlobalNav-nameSection-makeStyles-jss"],
 [class*="regionWrapper-APP_TOURNAMENT_PAGE_WITH_BANNER-GlobalNav-nameSection-makeStyles-jss"],
-[class*="nameSection-makeStyles-jss"]
+[class*="nameSection-makeStyles-jss"],
+.sgg1Ff3D
 {
   /* full name text */
   color: #B1B1B1 !important;
@@ -90,7 +92,7 @@ header:not(.sgg15V3Y.sgg1BpbL.sgg3gHar.sggjooyc.sgg2IzuF),
 .sgg1BH2f, .sgg1BH2f :not(*, * [style*="background-image"]), 
 section,
 /* .AttendeesTable :not([variant="standard"], input, .regionWrapper-APP_TOURNAMENT_PAGE-FeatureCanvas-MuiFormControl-root), */
-.AttendeesTable *,
+.AttendeesTable :not(fieldset),
 /* """background""" */
 .sgg1apK4,
 /* floating registration button at the bottom */
@@ -126,7 +128,8 @@ table + div,
 .tab-pane,
 .match-panel,
 .modal-tabs,
-.Card.match-display
+.Card.match-display,
+.sggFWUTf.sgg3hlED.sgg3-sWS
 {
   background-color: #222222 !important;
 }
